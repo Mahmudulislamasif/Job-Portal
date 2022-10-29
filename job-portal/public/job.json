@@ -1,0 +1,48 @@
+[
+    {
+        "id":"1",
+        "title":"React Developer",
+        "jobtype":"Onsite",
+        "category":"Front End Developement",
+        "salary":"6000",
+        "location":"Dhaka",
+        "companyname":"Brainstation-23",
+        "description":"This is mainly ios developer company",
+        "resposibilities":"",
+        "skillrequired":"HtML,CSS,Javascript,React",
+        "study":"Honors complete",
+        "numberofvacancy":"50",
+        "period":"3"
+    },
+    {
+        "id":"2",
+        "title":"Data Science",
+        "jobtype":"Online",
+        "category":"Data Science",
+        "salary":"7000",
+        "location":"Dhaka",
+        "companyname":"Spellon",
+        "description":"This is mainly web developer company",
+        "resposibilities":"",
+        "skillrequired":"Python",
+        "study":"Honors complete",
+        "numberofvacancy":"5",
+        "period":"3"
+        
+    },
+    {
+        "id":"3",
+        "title":"Web development",
+        "jobtype":"Online",
+        "category":"Web development",
+        "salary":"5000",
+        "location":"Dhaka",
+        "companyname":"uihut",
+        "description":"This is mainly web developer company",
+        "resposibilities":"",
+        "skillrequired":"Angular",
+        "study":"Honors complete",
+        "numberofvacancy":"8",
+        "period":"6"
+    }
+]
