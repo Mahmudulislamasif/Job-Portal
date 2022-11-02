@@ -1,6 +1,6 @@
 
 
-const { createUserApplyServices, getUserApplyServices } = require('../services/user.service');
+const { createUserApplyServices, getUserApplyServices, getUserByCompanyNameServices } = require('../services/user.service');
 exports.getUserApply=async(req,res,next)=>{
     try
     {
@@ -22,7 +22,28 @@ exports.getUserApply=async(req,res,next)=>{
     }
    
   }
-
+  exports.getUserByCompanyName=async(req,res,next)=>{
+    const {companyname}=req.params;
+    try
+    {
+     
+      const tours=await getUserByCompanyNameServices(companyname)
+      res.status(200).json({
+        status:"successfully get data from database",
+        messege:"Data get successfully",
+        data:tours
+      })
+    }
+    catch(error)
+    {
+       res.status(400).json({
+        status:'fail to get data',
+        messege:'Data is not available',
+        error:error.messege
+       })
+    }
+   
+  }
   exports.postUserApply=async(req,res,next)=>{
     try
     {

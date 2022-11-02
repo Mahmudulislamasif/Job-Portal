@@ -10,6 +10,8 @@ app.use(cors());
 const jobRoute=require('./route/job.route')
 const userApply=require('./route/user.route')
 const userCollection=require('./route/usercollection.route.js')
+const userInfo=require('./route/userinfo.route')
+const userEducation=require('./route/education.route')
 
 app.get("/", (req, res) => {
  res.send('it is working')
@@ -22,4 +24,6 @@ app.use('/jobs',jobRoute)
 
 app.use('/userapply',userApply)
 app.use('/user',userCollection)
+app.use('/userinfo',userInfo)
+app.use('/education',userEducation)
 module.exports = app;

@@ -6,8 +6,8 @@ router.route('/').get(UserCollectionController.getUser)
 .post(UserCollectionController.postUser)
 
 
-// router.route("/:id").get(JobController.getJobByID)
+router.route("/:email").get(UserCollectionController.getUserByEmail)
 
-
+router.route("/:id").patch(UserCollectionController.updateUserByID)
 
 module.exports=router

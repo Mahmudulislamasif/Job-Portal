@@ -6,7 +6,7 @@ router.route('/')
 .get(UserController.getUserApply)
 .post(UserController.postUserApply)
 
-
+router.route("/:companyname").get(UserController.getUserByCompanyName)
 // router.route("/:id").get(JobController.getJobByID)
 
 

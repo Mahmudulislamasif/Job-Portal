@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import { NavLink } from 'react-router-dom';
-
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init'
 const Navbar = () => {
      const [nav,setNav]=useState(false)
-     const [user,setUser]=useState({})
+     const [user]=useAuthState(auth)
+     const [userRole,setUserRole]=useState({})
      useEffect(()=>{
-      fetch('http://localhost:5000/user')
+      fetch(`http://localhost:5000/user/${user?.email}`)
       .then(res=>res.json())
-      .then(data=>console.log(data.data))
-  })
+      .then(data=>setUserRole(data.data))
+  },[user])
     const handleNav=()=>{
         setNav(!nav)
     }
@@ -22,11 +24,21 @@ const Navbar = () => {
         <li tabindex="0">
           <a>
             <span>Dashboard</span>
+            
           </a>
-          <ul class="p-2 bg-white">
-            <NavLink to='/postjobs'><li className="border-b border-gray-500 py-2 m-2">Post Jobs</li></NavLink>
-            <NavLink to='applicants'><li className="border-b border-gray-500 py-2 m-2">Show Applicants</li></NavLink>
+          <ul class="p-2 bg-white z-30">
+            {
+              userRole?.role=='recruiter' ?
+              <>
+              <NavLink to='/postjobs'><li className="border-b border-gray-500 py-2 m-2">Post Jobs</li></NavLink>
+            <NavLink to='/applicants'><li className="border-b border-gray-500 py-2 m-2">Show Applicants</li></NavLink>
             <NavLink to='/myreviews'> <li  className="border-b border-gray-600 py-2 m-2">Add Reviews</li></NavLink>
+              </>: 
+              <>
+                <NavLink to='/appliedjobs'><li className="border-b border-gray-500 py-2 m-2">Applied Jobs</li></NavLink>
+                <NavLink to='/createresume'><li className="border-b border-gray-500 py-2 m-2">Create Resume</li></NavLink>
+              </>
+            }
           </ul>
         </li>
         </ul>

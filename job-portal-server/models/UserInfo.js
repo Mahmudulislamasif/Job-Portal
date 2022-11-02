@@ -1,16 +1,6 @@
 const mongoose = require('mongoose');
 //schema design
-const userCollectionSchema=mongoose.Schema({
-    email:{
-      type:String,
-    },
-    name:
-    {
-      type:String,
-    },
-    role:{
-      type:String,
-    },
+const userInfoSchema=mongoose.Schema({
     firstname:{
       type:String,
     },
@@ -34,6 +24,6 @@ const userCollectionSchema=mongoose.Schema({
     timstamps:true,
   })
   
-  const Usercollection=mongoose.model('Usercollection',userCollectionSchema)
+  const Userinfo=mongoose.model('Userinformation',userInfoSchema)
 
-  module.exports=Usercollection;
+  module.exports=Userinfo;
