@@ -12,7 +12,7 @@ const userApply=require('./route/user.route')
 const userCollection=require('./route/usercollection.route.js')
 const userInfo=require('./route/userinfo.route')
 const userEducation=require('./route/education.route')
-
+const userJobDetails=require('./route/jobdetails.route')
 app.get("/", (req, res) => {
  res.send('it is working')
 });
@@ -26,4 +26,5 @@ app.use('/userapply',userApply)
 app.use('/user',userCollection)
 app.use('/userinfo',userInfo)
 app.use('/education',userEducation)
+app.use('/jobdetails',userJobDetails)
 module.exports = app;

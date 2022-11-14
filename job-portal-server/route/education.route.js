@@ -6,8 +6,8 @@ router.route('/')
 .get(EducationController.getUserEducation)
 .post(EducationController.postUserEducation)
 
-
-// router.route("/:id").get(JobController.getJobByID)
+router.route("/:email").get(EducationController.getUserEducationByEmail)
+router.route("/:id").delete(EducationController.deleteUserEducationByID)
 
 
 

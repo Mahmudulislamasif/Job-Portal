@@ -3,10 +3,14 @@ import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import { NavLink } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init'
+import { signOut } from 'firebase/auth';
 const Navbar = () => {
      const [nav,setNav]=useState(false)
      const [user]=useAuthState(auth)
      const [userRole,setUserRole]=useState({})
+     const logout = () => {
+         signOut(auth);
+     };
      useEffect(()=>{
       fetch(`http://localhost:5000/user/${user?.email}`)
       .then(res=>res.json())
@@ -30,8 +34,8 @@ const Navbar = () => {
             {
               userRole?.role=='recruiter' ?
               <>
-              <NavLink to='/postjobs'><li className="border-b border-gray-500 py-2 m-2">Post Jobs</li></NavLink>
-            <NavLink to='/applicants'><li className="border-b border-gray-500 py-2 m-2">Show Applicants</li></NavLink>
+              <NavLink to='/postjobs'><li className="border-b no-underline border-gray-500 py-2 m-2">Post Jobs</li></NavLink>
+            <NavLink to='/applicants'><li className="border-b no-underline border-gray-500 py-2 m-2">Show Applicants</li></NavLink>
             <NavLink to='/myreviews'> <li  className="border-b border-gray-600 py-2 m-2">Add Reviews</li></NavLink>
               </>: 
               <>
@@ -45,9 +49,8 @@ const Navbar = () => {
 
      
         <NavLink to="/signup"><li className='p-4'>SignUP</li></NavLink>
-        <NavLink to="/login"><li className='p-4'>Login</li></NavLink>
-        {/* {user ?  <button className="-mt-1" onClick={logout}>Logout</button>:<NavLink to='/login'><li className='p-4'>Login</li></NavLink>} */}
-      </ul>
+        {user ?  <button className="-mt-1" onClick={logout}>Logout</button>:<NavLink to='/login'><li className='p-4'>Login</li></NavLink>}
+      </ul> 
       <div onClick={handleNav} className='block md:hidden'>
           {nav ? <AiOutlineClose size={20}/> : <AiOutlineMenu size={20} />}
       </div>

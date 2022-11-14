@@ -4,6 +4,9 @@ const userEducationSchema=mongoose.Schema({
     institution:{
       type:String,
     },
+    degree:{
+      type:String,
+    },
     year:
     {
       type:String,
@@ -11,6 +14,9 @@ const userEducationSchema=mongoose.Schema({
     gpa:{
       type:String,
     },
+    email:{
+      type:String,
+    }
   },{
     timstamps:true,
   })

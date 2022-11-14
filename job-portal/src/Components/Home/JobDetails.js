@@ -15,11 +15,12 @@ const JobDetails = () => {
         .then(res=>res.json()) 
         .then(data=>setJob(data.data))
     },[id])
-    const onSubmit=(e)=>{
+    const onSubmitApply=(e)=>{
       e.preventDefault();
       const submitUserApply={
          email:e.target.email.value,
          companyname:e.target.companyname.value,
+         subject:e.target.subject.value,
          resume:e.target.resume.value,
          coverletter:e.target.coverletter.value 
       }
@@ -95,11 +96,13 @@ const JobDetails = () => {
               <div class="modal">
                 <div class="modal-box">
                   <h3 class="font-bold text-2xl text-center my-6">InterShip at {job.companyname}</h3>
-                  <form action="" onSubmit={onSubmit} >
+                  <form action="" onSubmit={(e)=>onSubmitApply(e)} >
                   <label htmlFor="">Email</label>
                   <input type="text" className="border p-2 w-full" name="email" value={user?.email} disabled/>
                   <label htmlFor="">Company Name</label>
                   <input type="text" className="border p-2 w-full" name="companyname" value={job.companyname} disabled/>
+                  <label htmlFor="">Subject</label>
+                  <input type="text" className="border p-2 w-full" name="subject"/>
                   <label htmlFor="">Resume Link</label>
                   <input type="text" name="resume" className="border p-2 w-full"/>
                   <label htmlFor="">Cover Letter</label>

@@ -13,7 +13,7 @@ const Job = ({job}) => {
       navigate(`/job/${id}`)
     }
     return (
-        <div class=" py-8 px-4 text-left w-96 bg-white text-black shadow-2xl container mx-auto mb-3 rounded-xl">
+        <div class="bg-[#f7f7f7] py-8 px-4 text-left w-96  shadow-2xl container mx-auto mb-3 rounded-xl">
             <h1 className="text-xl font-bold">{title}</h1>
             <h1 className=" text-gray-500 mt-2">{companyname}</h1>
           

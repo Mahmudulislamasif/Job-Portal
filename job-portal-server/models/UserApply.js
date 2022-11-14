@@ -2,12 +2,14 @@ const mongoose = require('mongoose');
 //schema design
 const userSchema=mongoose.Schema({
     email:{
-      type:String,
+      type:String
     },
     companyname:
     {
       type:String,
-      unique:[true,"Please provide a unique Name"],
+    },
+    subject:{
+      type:String,
     },
     resume:{
       type:String,
@@ -15,6 +17,12 @@ const userSchema=mongoose.Schema({
     },
     coverletter:{
         type:String,
+    },
+    status:{
+        type:String,
+    },
+    msg:{
+      type:String,
     }
   },{
     timstamps:true,

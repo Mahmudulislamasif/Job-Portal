@@ -6,9 +6,9 @@ router.route('/')
 .get(UserController.getUserApply)
 .post(UserController.postUserApply)
 
-router.route("/:companyname").get(UserController.getUserByCompanyName)
-// router.route("/:id").get(JobController.getJobByID)
-
+router.route("/:email").get(UserController.getUserApplyByEmail)
+// // router.route("/:id").get(JobController.getJobByID)
+router.route("/:id").patch(UserController.updateUserApplyByID)
 
 
 module.exports=router

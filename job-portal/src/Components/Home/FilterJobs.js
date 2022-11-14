@@ -2,21 +2,19 @@ import React, { useEffect, useState } from 'react';
 import Job from './Job';
 import { CiLocationOn } from 'react-icons/ci';
 import border from '../../Assests/HomePageAssests/title-border.png'
+import useJobs from '../../useHook/useJobs';
+import { NavLink } from 'react-router-dom';
 const FilterJobs = () => {
-    const [jobs,setJobs]=useState([])
+    const [jobs]=useJobs([])
     const [size,setSize]=useState("")
     const [filter,setFilter]=useState(jobs)
-    useEffect(()=>{
-        fetch('http://localhost:5000/jobs')
-        .then(res=>res.json())
-        .then(data=>setJobs(data.data))
-    })
+   
     const filterName =(cat)=>{
         const updateList=jobs.filter((x)=>x.category===cat)
         setFilter(updateList)
      }
     return (
-        <div className=" bg-[#f8f9fa] pt-5 md:pt-0 bg-cover bg-no-repeat text-center font-poppins">
+        <div className=" bg-[#f7f7f7] pt-5 md:pt-0 bg-cover bg-no-repeat text-center font-poppins">
         <div class=" md:-translate-y-2/4  rounded-lg mx-auto w-3/4 md:w-1/2 py-8 bg-[#43d485] ">
      
         <div className="block md:flex  items-center justify-center">
@@ -58,13 +56,14 @@ const FilterJobs = () => {
       
          </div> 
          
-         <h1 className="text-[#3c2064] text-5xl my-5  ml-8 text-center">Job List</h1>
+         <h1 className="text-[#090A27] font-bold text-5xl my-5  ml-8 text-center">Job List</h1>
     
          <div className="grid grid-cols-1 md:grid-cols-3 g-4">
             {
-              filter.map((job)=><Job job={job} key={job._id}></Job>)
+              filter.slice(0,6).map((job)=><Job job={job} key={job._id}></Job>)
             }
          </div>
+         <NavLink to='/alljobs'><button className="btn btn-primary btn-animate my-5">Load More</button></NavLink>
         </div>
     );
 };

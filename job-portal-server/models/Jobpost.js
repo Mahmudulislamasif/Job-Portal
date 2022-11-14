@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+
+const { ObjectId } = mongoose.Schema.Types
 //schema design
 const jobSchema=mongoose.Schema({
     title:{
@@ -52,7 +54,8 @@ const jobSchema=mongoose.Schema({
     period:{
       type:Number,
       required:true
-    }
+    },
+ 
   },{
     timstamps:true,
   })

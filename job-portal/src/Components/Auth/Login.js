@@ -37,8 +37,8 @@ const Login = () => {
     }
 
     return (
-        <div className='flex h-screen justify-center items-center'>
-        <div className="card w-96 bg-base-100 shadow-xl">
+        <div className='flex h-screen justify-center items-center bg-gradient-to-r from-purple-500 to-purple-600'>
+        <div className="card w-96 bg-white shadow-xl">
             <div className="card-body">
                 <h2 className="text-center text-2xl font-bold">Login</h2>
                 <form onSubmit={handleSubmit(onSubmit)}>
@@ -50,7 +50,7 @@ const Login = () => {
                         <input
                             type="email"
                             placeholder="Your Email"
-                            className="input input-bordered w-full max-w-xs"
+                            className="input input-bordered w-full max-w-xs  focus:outline-none"
                             {...register("email", {
                                 required: {
                                     value: true,
@@ -74,7 +74,7 @@ const Login = () => {
                         <input
                             type="password"
                             placeholder="Password"
-                            className="input input-bordered w-full max-w-xs"
+                            className="input input-bordered w-full max-w-xs  focus:outline-none"
                             {...register("password", {
                                 required: {
                                     value: true,
