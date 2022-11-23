@@ -12,3 +12,7 @@ exports.getJobByIDService=async(id)=>{
     const job=await Job.findOne({ _id: id})
     return job
 }
+exports.getJobByEmailServices=async(email)=>{
+    const user=await Job.find({email:email})
+    return user
+}

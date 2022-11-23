@@ -48,7 +48,7 @@ const Registration = () => {
       
     }
     return (
-        <div className='flex h-screen font-poppins justify-center items-center'>
+        <div className='flex  py-6 font-poppins justify-center items-center bg-gradient-to-r from-emerald-400 to-blue-300'>
         <div className="card w-96 bg-base-100 shadow-xl">
             <div className="card-body">
                 <h2 className="text-center text-2xl font-bold">Sign Up</h2>

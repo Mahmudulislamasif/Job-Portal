@@ -20,34 +20,11 @@ const Navbar = () => {
         setNav(!nav)
     }
     return (
-        <div className='flex justify-between items-center text-left h-24 w-full bg-gray-50 mx-auto px-4 text-black font-poppins'>
+        <div className='flex justify-between items-center text-left h-24 w-ful bg-slate-900 mx-auto px-4 text-white font-poppins'>
       <h1 className='w-full text-3xl font-bold'>InternBD</h1>
       <ul className='hidden md:flex'>
        <NavLink to='/home'> <li className='p-4'>Home</li></NavLink>
-       <ul class="menu menu-horizontal p-0">
-        <li tabindex="0">
-          <a>
-            <span>Dashboard</span>
-            
-          </a>
-          <ul class="p-2 bg-white z-30">
-            {
-              userRole?.role=='recruiter' ?
-              <>
-              <NavLink to='/postjobs'><li className="border-b no-underline border-gray-500 py-2 m-2">Post Jobs</li></NavLink>
-            <NavLink to='/applicants'><li className="border-b no-underline border-gray-500 py-2 m-2">Show Applicants</li></NavLink>
-            <NavLink to='/myreviews'> <li  className="border-b border-gray-600 py-2 m-2">Add Reviews</li></NavLink>
-              </>: 
-              <>
-                <NavLink to='/appliedjobs'><li className="border-b border-gray-500 py-2 m-2">Applied Jobs</li></NavLink>
-                <NavLink to='/createresume'><li className="border-b border-gray-500 py-2 m-2">Create Resume</li></NavLink>
-              </>
-            }
-          </ul>
-        </li>
-        </ul>
-
-     
+       <NavLink to="/dashboard"><li className='p-4'>Dashboard</li></NavLink>
         <NavLink to="/signup"><li className='p-4'>SignUP</li></NavLink>
         {user ?  <button className="-mt-1" onClick={logout}>Logout</button>:<NavLink to='/login'><li className='p-4'>Login</li></NavLink>}
       </ul> 

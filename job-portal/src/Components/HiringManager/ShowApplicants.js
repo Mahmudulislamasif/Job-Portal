@@ -19,7 +19,7 @@ const ShowApplicants = () => {
    
     return (
        <div>
-         <div class="overflow-x-auto p-3 font-poppins bg-purple-800">
+         <div class="overflow-x-auto p-3 font-poppins">
             {/* {
                 userApply.map((apply)=><ShowSpecificApplicants key={apply._id} apply={apply}></ShowSpecificApplicants>)
             }  */}

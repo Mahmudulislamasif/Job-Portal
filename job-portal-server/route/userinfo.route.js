@@ -6,8 +6,7 @@ router.route('/')
 .get(UserInfoController.getUserInfo)
 .post(UserInfoController.postUserInfo)
 
-// router.route("/:companyname").get(UserController.getUserByCompanyName)
-// router.route("/:id").get(JobController.getJobByID)
+
 
 
 

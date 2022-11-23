@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 
 const ShowSpecificApplicants = () => {
-    const {id}=useParams()
+    const {userid}=useParams()
 
     const handleUserApply =(event)=>
     {
@@ -11,7 +11,7 @@ const ShowSpecificApplicants = () => {
             status:event.target.status.value,
             msg:event.target.msg.value,
           }
-          const url=`http://localhost:5000/userapply/${id}`
+          const url=`http://localhost:5000/userapply/${userid}`
           fetch(url,
             {
                 method:'PATCH',

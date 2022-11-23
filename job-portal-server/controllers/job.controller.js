@@ -1,5 +1,5 @@
 
-const { getJobServices, createJobServices, getJobByIDService } = require('../services/job.services');
+const { getJobServices, createJobServices, getJobByIDService, getJobByEmailServices } = require('../services/job.services');
 exports.getJobs=async(req,res,next)=>{
     try
     {
@@ -47,15 +47,15 @@ exports.getJobs=async(req,res,next)=>{
   
   exports.getJobByID=async(req,res,next)=>{
     
-    const {id}=req.params;
+   
     try
     {
-     
+      const {id}=req.params;
       const result= await getJobByIDService(id);
 
       res.status(200).json({
         status:"success",
-        messege:"Data is get by ID",
+        messege:"Data is get by Email",
         data:result
       })
     }
@@ -63,7 +63,28 @@ exports.getJobs=async(req,res,next)=>{
     {
        res.status(400).json({
         status:'fail',
-        messege:'Data is not get by ID',
+        messege:'Data is not get by Email',
+        error:error.messege
+       })
+    }
+   
+  }
+  exports.getJobByEmail=async(req,res,next)=>{
+    try
+    {
+      const {email}=req.params;
+      const tours=await getJobByEmailServices(email)
+      res.status(200).json({
+        status:"successfully get data from database",
+        messege:"Data get successfully",
+        data:tours
+      })
+    }
+    catch(error)
+    {
+       res.status(400).json({
+        status:'fail to get data',
+        messege:'Data is not available',
         error:error.messege
        })
     }

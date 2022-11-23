@@ -1,18 +1,24 @@
-const User = require('../models/UserApply');
+const UserApply = require('../models/UserApply');
 exports.getUserApplyServices=async()=>{
-    const jobs=await User.find({})
-    return jobs
+    const usersApply=await UserApply.find({})
+    return usersApply
 }
 exports.createUserApplyServices=async(data)=>{
-    const userapply=await User.create(data)
-    return userapply
+ 
+   
+    const usersApply=await UserApply.create(data)
+    return usersApply
 }
 exports.getUserApplyByEmailServices=async(email)=>{
-    const jobs=await User.find({email:email})
+    const jobs=await UserApply.find({email:email})
+    return jobs
+}
+exports.getUserApplyByIDServices=async(id)=>{
+    const jobs=await UserApply.find({jobId:id})
     return jobs
 }
 exports.updateUserApplyByIDServices=async(id,data)=>{
-    const user=await User.updateOne({_id:id},
+    const user=await UserApply.updateOne({_id:id},
     {
         $set:data
     

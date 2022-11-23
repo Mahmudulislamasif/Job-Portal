@@ -3,6 +3,8 @@ import CountUp from "react-countup"
 import ScrollTrigger from "react-scroll-trigger"
 import { FiUsers } from 'react-icons/fi';
 import { HiOutlineClipboardList } from 'react-icons/hi';
+import { ImBlog } from 'react-icons/im';
+import { TbMoodCrazyHappy } from 'react-icons/tb';
 const BussinessSummary = () => {
     const [counterOn,setCounterOn]=useState(false)
     return (
@@ -25,6 +27,21 @@ const BussinessSummary = () => {
                  {counterOn && <CountUp start={0} end={50} duration={2} delay={0}/>}+
                  </h1>
                  </div>
+                 <div className="p-6 border-r-2 border-indigo-500 ">
+                     <ImBlog className="text-5xl  bg-gray-100 text-[#800080] rounded-full p-3"/>
+                    <h1 className="text-3xl">Total Blogs</h1>
+                 <h1 className="text-3xl">
+                 {counterOn && <CountUp start={0} end={50} duration={2} delay={0}/>}+
+                 </h1>
+                 </div>
+                 <div className="p-6 ">
+                     <TbMoodCrazyHappy className="text-5xl  bg-gray-100 text-[#800080] rounded-full p-3"/>
+                    <h1 className="text-3xl">Happy Clients</h1>
+                 <h1 className="text-3xl">
+                 {counterOn && <CountUp start={0} end={50} duration={2} delay={0}/>}+
+                 </h1>
+                 </div>
+                 
               </div>
            </ScrollTrigger>
           </div>

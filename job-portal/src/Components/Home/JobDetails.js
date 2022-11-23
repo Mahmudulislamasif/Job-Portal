@@ -5,20 +5,21 @@ import { useParams } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth'
 import auth from '../../firebase.init';
 const JobDetails = () => {
-    const {id}=useParams()
+    const {jobid}=useParams()
     const [job,setJob]=useState({})
     const [jopApply,setJobApply]=useState([])
     const [user]=useAuthState(auth)
     useEffect(()=>{
-        const url=`http://localhost:5000/jobs/${id}`
+        const url=`http://localhost:5000/jobs/${jobid}`
         fetch(url)
         .then(res=>res.json()) 
         .then(data=>setJob(data.data))
-    },[id])
+    },[jobid])
     const onSubmitApply=(e)=>{
       e.preventDefault();
       const submitUserApply={
          email:e.target.email.value,
+         jobId:e.target.jobid.value,
          companyname:e.target.companyname.value,
          subject:e.target.subject.value,
          resume:e.target.resume.value,
@@ -99,6 +100,8 @@ const JobDetails = () => {
                   <form action="" onSubmit={(e)=>onSubmitApply(e)} >
                   <label htmlFor="">Email</label>
                   <input type="text" className="border p-2 w-full" name="email" value={user?.email} disabled/>
+                  <label htmlFor="">Job ID</label>
+                  <input type="text" className="border p-2 w-full" name="jobid" value={jobid} disabled/>
                   <label htmlFor="">Company Name</label>
                   <input type="text" className="border p-2 w-full" name="companyname" value={job.companyname} disabled/>
                   <label htmlFor="">Subject</label>

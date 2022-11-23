@@ -3,6 +3,9 @@ const mongoose = require('mongoose');
 const { ObjectId } = mongoose.Schema.Types
 //schema design
 const jobSchema=mongoose.Schema({
+    email:{
+      type:String,
+    },
     title:{
       type:String,
       required:[true,"Please provide a title name for job"],

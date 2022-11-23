@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init'
 const PostJobs = () => {
-
+  const [user]=useAuthState(auth)
     const onSubmit=(e)=>{
        e.preventDefault();
        const submitPostJob={
+          email:e.target.email.value,
           title:e.target.title.value,
           jobtype:e.target.jobtype.value,
           category:e.target.category.value,
@@ -36,6 +38,10 @@ const PostJobs = () => {
            <div className="bg-gradient-to-r from-indigo-500 to-purple-500 flex flex-col justify-center   p-4 font-poppins">
            <form action="" onSubmit={(e)=>onSubmit(e)} className="mx-auto bg-white p-10 w-3/4 md:w-1/2 rounded-md ">
                <h1 className="text-3xl text-center font-bold">Post Your jobs here</h1>
+               <div className="flex flex-col">
+                   <label htmlFor="">Email</label>
+                   <input type="text" name="email" value={user?.email} className="border p-2 focus:outline-green-300" required/>
+                </div>
                 <div className="flex flex-col">
                    <label htmlFor="">Job Title</label>
                    <input type="text" name="title" className="border p-2 focus:outline-green-300" required/>

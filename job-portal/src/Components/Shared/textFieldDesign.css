@@ -1,0 +1,18 @@
+.inputContainer
+{
+    position:relative;
+}
+
+.inputContainer span
+{
+    position:absolute;
+    left:0;
+    bottom: 15px;
+    transition: 0.5s;
+    padding-left: 5px;
+    background-color: white;
+}
+.inputContainer input:focus~span
+{
+    transform:translateX(10px) translateY(-20px);
+}

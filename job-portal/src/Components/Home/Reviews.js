@@ -5,9 +5,9 @@ import Review from './Review';
 const Reviews = () => {
     const [testimonials,setTestimonial]=useState([])
     useEffect(()=>{
-        fetch('Testimonial.json')
+        fetch('http://localhost:5000/reviews')
         .then(res=>res.json())
-        .then(data=>setTestimonial(data))
+        .then(data=>setTestimonial(data.data))
     })
     const responsive = {
         superLargeDesktop: {
@@ -33,7 +33,7 @@ const Reviews = () => {
             <h1 className="text-5xl font-bold text-center text-[#090A27] py-6">Testimonials</h1>
             <Carousel responsive={responsive} showDots={true}>
                {
-                testimonials.map((testimonial)=><Review testimonial={testimonial} key={testimonial.id}></Review>)
+                testimonials?.map((testimonial)=><Review testimonial={testimonial} key={testimonial._id}></Review>)
                }
             </Carousel>
         </div>
