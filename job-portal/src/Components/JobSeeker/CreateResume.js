@@ -5,7 +5,7 @@ import CandidateCourses from './CandidateCourses';
 import CandidateEducation from '../JobSeeker/CandidateEducation/CandidateEducation';
 import CandidateImportantLinks from './CandidateImportantLinks';
 import CandidateInfo from '../JobSeeker/CandidateInfo/CandidateInfo';
-import CandidateProjects from './CandidateProjects';
+import CandidateProjects from '../JobSeeker/CandidateProjects/CandidateProjects';
 import CandidateSkills from './CandidateSkills';
 import CandidateJob from './CandidateJobs/CandidateJob';
 

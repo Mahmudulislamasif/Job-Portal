@@ -14,7 +14,7 @@ const userInfoSchema=mongoose.Schema({
     email:{
       type:String,
     },
-    mobilenumber:{
+    mobilenumber:{ 
         type:Number,
     },
     location:{

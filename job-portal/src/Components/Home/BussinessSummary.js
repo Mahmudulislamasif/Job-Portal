@@ -12,7 +12,7 @@ const BussinessSummary = () => {
           <div className="py-4 bg-[#f7f7f7]">
             <h1 className="text-5xl font-bold text-center py-6">Stats</h1>
            <ScrollTrigger onEnter={()=>setCounterOn(true)} onExit={()=>setCounterOn(false)}>
-              <div className="container  mx-auto bg-green-100  text-black  grid grid-cols-1 md:grid-cols-4 g-4">
+              <div className="container  mx-auto bg-gradient-to-r from-slate-900 via-slate-600 to-slate-900  text-white  grid grid-cols-1 md:grid-cols-4 g-4">
                  <div className="p-6 border-r-2 border-indigo-500 ">
                     <FiUsers className="text-5xl  bg-gray-100 text-[#800080] rounded-full p-3"/>
                     <h1  className="text-3xl">Users</h1>

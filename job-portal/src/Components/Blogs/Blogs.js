@@ -59,7 +59,7 @@ const Blogs = () => {
                 </div>
                 <div className="flex flex-col">
                    <label htmlFor="" className="font-bold mb-3">Date</label>
-                   <input type="text" name="date" {...register('date')} className="border p-2 mb-3 focus:outline-green-300" value={moment().format('LL')} required disabled/>
+                   <input type="text" name="date" {...register('date')} className="border p-2 mb-3 focus:outline-green-300" value={moment().format('LLL')} required disabled/>
                 </div>
                 <input type="submit" className="bg-gradient-to-r cursor-pointer w-full p-4 text-white from-indigo-500 to-purple-500" />
             </form>

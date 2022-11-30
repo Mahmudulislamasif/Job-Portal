@@ -13,9 +13,9 @@ const Dashboard = () => {
     },[user])
     return (
         <div>
-         <div class="drawer drawer-mobile bg-slate-800">
+         <div className="drawer drawer-mobile bg-slate-800">
             <input id="dashboard-sidebar" type="checkbox" class="drawer-toggle" />
-            <div class="drawer-content">
+            <div className="drawer-content">
                 <Outlet></Outlet>
             </div>
             <div class="drawer-side">

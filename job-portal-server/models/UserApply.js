@@ -27,6 +27,9 @@ const userSchema=mongoose.Schema({
     },
     msg:{
       type:String,
+    },
+    date:{
+      type:String
     }
     
   },{

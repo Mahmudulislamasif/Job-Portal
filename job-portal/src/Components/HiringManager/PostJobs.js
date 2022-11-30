@@ -35,7 +35,7 @@ const PostJobs = () => {
     return (
         <div className="">
            
-           <div className="bg-gradient-to-r from-indigo-500 to-purple-500 flex flex-col justify-center   p-4 font-poppins">
+           <div className=" flex flex-col justify-center   p-4 font-poppins">
            <form action="" onSubmit={(e)=>onSubmit(e)} className="mx-auto bg-white p-10 w-3/4 md:w-1/2 rounded-md ">
                <h1 className="text-3xl text-center font-bold">Post Your jobs here</h1>
                <div className="flex flex-col">

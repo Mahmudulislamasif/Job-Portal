@@ -1,18 +1,23 @@
 import React, { useEffect, useState } from 'react';
+import { useQuery } from 'react-query';
 import { NavLink, useNavigate, useParams } from 'react-router-dom';
+import useApplicants from '../../useHook/useApplicants';
+import Loading from '../Shared/Loading';
 
 const ShowSpeceficJobApplicants = () => {
     const {id}=useParams()
     const navigate=useNavigate();
     const [showUser,setShowJobs]=useState([])
+    const { userData, isLoading, refetch } = useApplicants()
+    
+    if(isLoading){
+        return <Loading></Loading>
+    }
     const navigateToUserForm=(userid)=>{
         navigate(`/applicantsform/${userid}`)
       }
-    useEffect(()=>{
-        fetch(`http://localhost:5000/userapplyid/${id}`)
-        .then(res=>res.json())
-        .then(data=>setShowJobs(data.data))
-    },[id])
+  
+    console.log(showUser)
     return (
         <div>
         <div class="overflow-x-auto p-3 font-poppins">
@@ -30,7 +35,7 @@ const ShowSpeceficJobApplicants = () => {
                </thead>
                <tbody>
                    {
-                      showUser.map((apply,index)=>              
+                      userData?.data.map((apply,index)=>              
                        <tr key={apply._id}>
                            <th className="bg-slate-100">{index+1}</th>
                            <td className="bg-slate-100">{apply.email}</td>

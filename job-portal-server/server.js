@@ -7,7 +7,7 @@ const app = require("./app");
 
 // database connection
 
-mongoose.connect(process.env.DATABASE_LOCAL).then(()=>{
+mongoose.connect(process.env.DATABASE).then(()=>{
   console.log("Database connect");
 })
 // server

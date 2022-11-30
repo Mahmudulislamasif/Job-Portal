@@ -4,6 +4,7 @@ import { FaMoneyBill, FaMoneyBillAlt, FaMoneyBillWave } from 'react-icons/fa';
 import { useParams } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth'
 import auth from '../../firebase.init';
+import moment from 'moment';
 const JobDetails = () => {
     const {jobid}=useParams()
     const [job,setJob]=useState({})
@@ -23,7 +24,8 @@ const JobDetails = () => {
          companyname:e.target.companyname.value,
          subject:e.target.subject.value,
          resume:e.target.resume.value,
-         coverletter:e.target.coverletter.value 
+         coverletter:e.target.coverletter.value,
+         date:e.target.date.value
       }
       fetch('http://localhost:5000/userapply', {
         method: 'POST',
@@ -110,6 +112,8 @@ const JobDetails = () => {
                   <input type="text" name="resume" className="border p-2 w-full"/>
                   <label htmlFor="">Cover Letter</label>
                   <textarea name="coverletter"  id="" className="border p-2 w-full" cols="30" rows="10"></textarea>
+                  <label htmlFor="">Date</label>
+                  <input type="text" className="border p-2 w-full" name="date" value={moment().format('LL')} disabled/>
                   <input type="submit" value="Submit" className="btn mx-auto btn-primary w-full" required/>
                   <div class="modal-action">
                     <label for="my-modal" class="btn">Yay!</label>

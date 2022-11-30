@@ -20,14 +20,14 @@ const FilterJobs = () => {
      }
 
     return (
-        <div className=" bg-[#f7f7f7] pt-5 md:pt-0 bg-cover bg-no-repeat text-center font-poppins">
-        <div class=" md:-translate-y-2/4 rounded-full mx-auto w-3/4 md:w-1/2 py-10 bg-gradient-to-r from-emerald-400 to-blue-300 shadow-2xl ">
+        <div className=" bg-[#F3F4F6] pt-5 md:pt-0 bg-cover bg-no-repeat text-center font-poppins">
+        <div class=" md:-translate-y-2/4 rounded-full mx-auto w-3/4 md:w-1/2 py-10 bg-gradient-to-r from-slate-900 via-slate-600 to-slate-900 shadow-2xl ">
             
             <form action="" onSubmit={handleSubmit(onSubmit)}>
             <div className="block md:flex  items-center justify-center">
             
             <div className="flex items-center mb-4 md:mb-0">
-            <select className="py-1 px-2 focus:outline-none  rounded-sm  mr-4 bg-slate-900 text-white" name="" id="" {...register('category')} >
+            <select className="py-1 px-2 focus:outline-none  rounded-sm  mr-4  text-black" name="" id="" {...register('category')} >
                 <option value="All">All</option>
                 <option value="Web Development">Web development</option>
                 <option value="Front End Development">Front End Development</option>
@@ -35,7 +35,7 @@ const FilterJobs = () => {
             </select> 
             </div>
             <div className="flex items-center">
-                <select name="" id="" className="py-1 px-2 rounded-sm w-36 mr-4 focus:outline-dotted bg-slate-900 text-white" {...register('address')}>
+                <select name="" id="" className="py-1 px-2 rounded-sm w-36 mr-4 focus:outline-dotted text-black" {...register('address')}>
                     <option value="Location" select>Location</option>
                     <option value="Chittagong" select>Chittagong</option>
                     <option value="Dhaka" select>Dhaka</option>
@@ -46,7 +46,7 @@ const FilterJobs = () => {
                     <option value="Work from home" select>Work from home</option>
                 </select>
             </div>
-            <input type="submit" className="border p-1 bg-green-500 text-white "/>
+            <input type="submit" className="border py-1 px-2 cursor-pointer text-white "/>
             
             </div>
             </form>

@@ -42,7 +42,7 @@ function App() {
           <Route path='applicants' element={<ShowApplicants/>}></Route>
           <Route path='createresume' element={<CreateResume/>}></Route>
           <Route path='appliedjobs' element={<AppliedJobs/>}></Route>
-         
+          <Route path='blogs' element={<Blogs/>}></Route>
           <Route path='myreview' element={<PostReviews/>}></Route>
         </Route>
           

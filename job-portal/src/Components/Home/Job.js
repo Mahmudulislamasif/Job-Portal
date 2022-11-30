@@ -13,7 +13,7 @@ const Job = ({job}) => {
       navigate(`/job/${id}`)
     }
     return (
-        <div data-aos="flip-left" class="bg-[#f7f7f7] py-8 px-4 text-left w-96  shadow-2xl container mx-auto mb-3 rounded-xl">
+        <div data-aos="flip-left" class="bg-[#F3F4F6] py-8 px-4 text-left w-96  shadow-2xl container mx-auto mb-3 rounded-xl">
             <h1 className="text-xl font-bold">{title}</h1>
             <h1 className=" text-gray-500 mt-2">{companyname}</h1>
           

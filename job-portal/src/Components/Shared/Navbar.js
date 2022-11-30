@@ -35,7 +35,7 @@ const Navbar = () => {
         <h1 className='w-full text-3xl font-bold text-[#00df9a] m-4 text-left'>Blogs Project</h1>
           <li className='p-4 border-b border-gray-600 '>Home</li>
           <ul class="menu menu-horizontal p-0">
-        <li tabindex="0">
+        <li tabIndex="0">
           <a>
             <span>Blogs</span>
           </a>

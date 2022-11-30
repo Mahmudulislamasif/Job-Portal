@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
-
+const validator=require('validator');
 const reviewsSchema=mongoose.Schema({
     email:{
       type:String,
+      unique:[true,"Only one post you can give you"]
     },
     description:
     {

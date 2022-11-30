@@ -17,18 +17,22 @@ const Contact = () => {
         });
     };
     return (
-        <div className="bg-[#f7f7f7]">
+        <div className="bg-[#f7f7f7] pb-3">
             <h1 className="text-5xl font-bold text-center py-6">Contact Us</h1>
-              <form ref={form} onSubmit={sendEmail} className="flex rounded-lg flex-col w-1/2 mx-auto bg-white shadow-lg p-6">
+              <form ref={form}  data-aos="zoom-in" onSubmit={sendEmail} className="flex rounded-lg flex-col w-1/2 mx-auto bg-white shadow-lg p-8">
                 <div className="inputContainer">
                 
-                <input type="text" className="border p-2 mb-3 rounded-lg w-full" name="name" required/>
+                <input type="text" className="border p-3 mb-3 rounded-lg w-full focus:outline-lime-500" name="name" required/>
                 <span className="mb-2" >Your Name</span>
                 </div>
-                <label  className="mb-2">Email</label>
-                <input placeholder="Your Email" type="email" className="border p-3 mb-3  rounded-lg" name="email_id" required/>
-                <label  className="mb-2">Message</label>
-                <textarea name="message" placeholder="Write Something Here..." className="mb-3  rounded-lg" required  />
+                <div className="inputContainer">
+                <input  type="email" className="border p-3 mb-3 w-full rounded-lg focus:outline-lime-500" name="email_id" required/>
+                <span  className="mb-2">Your Email</span>
+                </div>
+                <div className="inputContainer">
+                <textarea name="message" cols={30} rows={10} className="mb-3 border p-3 w-full focus:outline-lime-500  rounded-lg" required  />
+                <label  className="my-2">Message</label>
+                </div>
                 <input type="submit" className="btn btn-primary" value="Send" />
             </form>
             <ToastContainer />
